@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doa Ulang Tahun untuk Suamiku</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #6ed6f0;
+    }
+    
+    .container {
+      width: 80%;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #6ed6f0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header {
+      background-color: #4f7eeb;
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px 10px 0 0;
+    }
+    
+    .content {
+      padding: 20px;
+    }
+    
+    .footer {
+      background-color: #4f7eeb;
+      color: #fff;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+    }
+  </style>
+</head>
+<body><audio controls id="audio">
+  <source src="Anugerah terindah.mp3" type="audio/mp3">
+  Browsermu tidak mendukung tag audio.
+</audio>
+
+<script>
+  // Menyimpan status audio player
+audio.addEventListener('timeupdate', () => {
+  localStorage.setItem('audioCurrentTime', audio.currentTime);
+});
+
+audio.addEventListener('play', () => {
+  localStorage.setItem('audioPlaying', true);
+});
+
+audio.addEventListener('pause', () => {
+  localStorage.setItem('audioPlaying', false);
+});
+
+// Mengambil status audio player
+if (localStorage.getItem('audioCurrentTime')) {
+  audio.currentTime = parseFloat(localStorage.getItem('audioCurrentTime'));
+  if (localStorage.getItem('audioPlaying') === 'true') {
+    audio.play();
+  }
+}
+</script>
+
+  <div class="container">
+    <div class="header">
+      <h2>Doa Ulang Tahun untuk Suamiku</h2>
+    </div>
+    <div class="content">
+      <p>Ya Allah, di hari ulang tahun suamiku ini, aku memohon kepada-Mu agar Engkau memberikan dia umur yang panjang, kesehatan yang baik, dan kesempatan untuk terus beribadah kepada-Mu.
+        Berikanlah rejeki yang halal berkah melimpah,serta mudahkanlah segala usaha dalam mencapai mimpi dan harapannya</p>
+      Berikanlah dia kekuatan untuk menjadi lebih baik dan lebih dekat kepada-Mu. Tingkatkanlah kasih sayang antara kami.Jadikanlah kami pasangan yang harmonis dan bahagia, 
+        serta berikanlah kami kekuatan untuk menghadapi segala tantangan dan kesulitan dalam hidup kami.Semoga doa ini dikabulkan dan suamiku menjadi orang yang lebih baik dan lebih sabar dalam membimbing rumah tangganya.</p>
+        <p>aamiin</p>
+      <br><div style="font-style: italic;"><p>sayang, adek mencintai mas lebih dari apa pun di dunia ini.
+         adek bersyukur banget memiliki mas sebagai pasangan hidupnya adek.adek berharap kita dapat terus bersama,
+          mencintai dan menyayangi satu sama lain, serta membangun kehidupan yang bahagia dan harmonis bersama.
+          hingga kita bertemu kembali disurga,dan adek harap nanti mas tetap memilih adek sebagai kekasih mas disana.terimaksih karena sudah mau berjuang untuk adek,untuk hubungan kita,
+        terimaksih udah memilih dan menerima adek sebagai takdir mas.adek benar-benar merasa beruntung dicintai oleh lelaki sehebat mas.
+    adek sayang mas,terimakasih untuk rasa damai selama ini.adek akan terus berusaha menjadi istri yang baik buat mas.sayang terus sama adek yaaaaa<br>
+luv u sayang</p>
+    </div>
+  </div>
+</body>
+<a href="puisi.html" style="background-color: #4f7eeb; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none;">Kembali</a>
+</html>
+

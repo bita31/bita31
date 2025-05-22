@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Puisi</title>
+  <link rel="stylesheet" href="file1.css">
+</head>
+<body>
+  <p>jangan lupa puter lagunya dulu sambil baca puisinya ya sayangku</p>
+  <audio controls id="audio">
+    <source src="Anugerah terindah.mp3" type="audio/mp3">
+    Browsermu tidak mendukung tag audio.
+  </audio>
+  <button id="play-button">Play</button>
+  <button id="pause-button">Pause</button>
+  <div class="container">
+    <div class="poetry-container">
+      <div style="text-align: center;">
+        <h2>sayangku</h2>
+        <h5><i style="font-weight: normal;">adek yang comel</i></h5>
+        <br>
+        Di kedalaman jiwaku, aku merasakan cinta<br>
+        Yang tak terhingga, tak terkira, tak terbatas<br>
+        Cinta yang membuatku hidup, cinta yang membuatku bahagia<br>
+        Cinta yang membuatku merasa tidak sendirian <br><br>
+        Di dalam pelukanmu, aku merasa aman<br>
+        Di dalam kasihmu, aku merasa hidup<br>
+        Kamu adalah cinta sejati yang aku cari<br>
+        Kamu adalah bagian dari jiwaku, bagian dari hidupku <br><br>
+        Aku mencintaimu lebih dari kata-kata<br>
+        Aku mencintaimu lebih dari apa pun<br>
+        Kamu adalah cinta yang tak terhingga<br>
+        Kamu adalah cinta yang tak terlupakan <br><br>
+        Di malam hari, aku memikirkanmu<br>
+        Di siang hari, aku merindukanmu<br>
+        Kamu adalah cinta yang tak tergantikan<br>
+        Kamu adalah cinta yang membuatku bahagia <br><br>
+        Aku akan mencintaimu selamanya<br>
+        Aku akan menjagamu selamanya<br>
+        Kamu adalah cinta sejati yang aku cari<br>
+        Kamu adalah cinta yang membuatku merasa hidup <br><br>
+        Dengan cinta kita, kita akan melewati<br>
+        Semua kesulitan, semua tantangan<br>
+        Kita akan bersama, kita akan saling mencintai<br>
+        Kita akan hidup dalam cinta yang tak terhingga"
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: space-between;">
+    <a href="index.html" style="background-color: #4f7eeb; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none;">Kembali</a>
+    <a href="doa.html" style="background-color: #4f7eeb; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none;">Lanjut yuk :)</a>
+  </div>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const playButton = document.getElementById('play-button');
+    const pauseButton = document.getElementById('pause-button');
+
+    // Cek apakah ada status audio player yang tersimpan
+    if (sessionStorage.getItem('audioCurrentTime')) {
+      audio.currentTime = parseFloat(sessionStorage.getItem('audioCurrentTime'));
+      if (sessionStorage.getItem('audioPlaying') === 'true') {
+        audio.play();
+      }
+    }
+
+    // Simpan status audio player saat audio berjalan
+    audio.addEventListener('timeupdate', () => {
+      sessionStorage.setItem('audioCurrentTime', audio.currentTime);
+    });
+
+    audio.addEventListener('play', () => {
+      sessionStorage.setItem('audioPlaying', true);
+    });
+
+    audio.addEventListener('pause', () => {
+      sessionStorage.setItem('audioPlaying', false);
+    });
+
+    playButton.addEventListener('click', () => {
+      audio.play();
+    });
+
+    pauseButton.addEventListener('click', () => {
+      audio.pause();
+    });
+  </script>
+</body>
+</html>
